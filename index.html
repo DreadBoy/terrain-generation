@@ -1,0 +1,38 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Matic Leva" />
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script src="third_party/three.js"></script>
+    <script src="objects.js"></script>
+    <script src="script.js"></script>
+    <script>
+        
+        let scene = SetScene();
+
+        let terrain = new Terrain(32, 0.5);
+
+        scene.add(terrain);
+
+        terrain.generateTerrain();
+
+        document.addEventListener('keyup', (e) => {
+            if (e.which == 82) {
+                terrain.generateTerrain();
+            }
+        })
+
+    </script>
+</body>
+</html>
